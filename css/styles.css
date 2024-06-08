@@ -1,8 +1,12 @@
 body {
   font: 100% Helvetica, sans-serif;
-  color: #3498db;
+  background-color: #000;
+  color: #fff;
 }
 
+nav {
+  background-color: blue;
+}
 nav ul {
   margin: 0;
   padding: 0;
@@ -10,10 +14,35 @@ nav ul {
 }
 nav li {
   display: inline-block;
+  margin: 10px;
 }
 nav a {
   text-decoration: none;
-  color: #3498db;
+  color: #fff;
+}
+
+.container {
+  border: 1px solid #fff;
+  margin-top: 10px;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.container div {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid blue;
+  height: 200px;
+  width: 200px;
+}
+@media (max-width: 767px) {
+  .container div {
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
