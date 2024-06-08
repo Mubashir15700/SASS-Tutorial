@@ -1,0 +1,12 @@
+@use '../bases/mixins';
+@use '../bases/variables';
+
+.container1,
+.container2,
+.container3 {
+    @include mixins.div-container(variables.$primary-color);
+}
+
+.container2 {
+    @include mixins.border-radius(10px);
+}

@@ -1,0 +1,18 @@
+// modules importing
+@use 'layout/containers';
+@use 'layout/grid';
+@use 'bases/variables';
+@use 'bases/mixins';
+@use 'components/nav';
+@use 'components/button';
+@use 'bases/reset';
+@import 'bases/messages';
+
+// Global styles
+body {
+    font: 100% variables.$font-stack;
+    background-color: variables.$background-color;
+    color: variables.$primary-color;
+    font-size: variables.$base-font-size;
+    line-height: variables.$base-line-height * variables.$base-font-size; // using operators
+}

@@ -1,27 +1,11 @@
-@use 'base';
-
-nav {
-    background-color: blue;
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    li {
-        display: inline-block;
-        margin: 10px;
-    }
-
-    a {
-        text-decoration: none;
-        color: base.$primary-color;
-    }
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
 }
 
-.container {
-    border: 1px solid base.$primary-color;
+@mixin div-container($prim-color) {
+    border: 1px solid $prim-color;
     margin-top: 10px;
     display: flex;
 

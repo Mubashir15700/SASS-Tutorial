@@ -1,0 +1,75 @@
+// Variables for grid settings
+$grid-columns: 12;
+$gutter-width: 20px;
+
+// Mixins for creating grid layout
+@mixin make-container() {
+    width: 100%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $gutter-width / 2;
+    padding-left: $gutter-width / 2;
+}
+
+@mixin make-row() {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -$gutter-width / 2;
+    margin-left: -$gutter-width / 2;
+}
+
+@mixin make-col($columns) {
+    flex: 0 0 percentage($columns / $grid-columns);
+    max-width: percentage($columns / $grid-columns);
+    padding-right: $gutter-width / 2;
+    padding-left: $gutter-width / 2;
+}
+
+// Classes for grid system
+.container {
+    @include make-container();
+}
+
+.row {
+    @include make-row();
+}
+
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        @include make-col($i);
+    }
+}
+
+// Responsive grid classes
+@media (max-width: 767px) {
+    @for $i from 1 through $grid-columns {
+        .col-sm-#{$i} {
+            @include make-col($i);
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    @for $i from 1 through $grid-columns {
+        .col-md-#{$i} {
+            @include make-col($i);
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    @for $i from 1 through $grid-columns {
+        .col-lg-#{$i} {
+            @include make-col($i);
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    @for $i from 1 through $grid-columns {
+        .col-xl-#{$i} {
+            @include make-col($i);
+        }
+    }
+}

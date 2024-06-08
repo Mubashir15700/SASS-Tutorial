@@ -1,0 +1,22 @@
+@use '../bases/variables';
+
+// nesting
+nav {
+    background-color: blue;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        margin: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: variables.$primary-color;
+    }
+}
